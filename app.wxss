@@ -1,0 +1,4 @@
+/* MicroSoft Yahei属于全局样式，该程序中所有的字体都是一样的 */
+text {
+   font-family:MicroSoft Yahei;  
+}

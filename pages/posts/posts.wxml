@@ -1,0 +1,48 @@
+<view>
+  <!-- swiper 滑块视图容器，其中只可放置swiper-item组件，否则会导致未定义的行为。 -->
+  <swiper indicator-dots="true" autoplay="true" interval="2000">
+    <!-- 仅可放置在swiper组件中，宽高自动设置为100%, -->
+    <swiper-item>
+      <image src="/images/wx.png"></image>
+    </swiper-item>
+
+    <swiper-item>
+      <image src="/images/vr.png"></image>
+    </swiper-item>
+
+    <swiper-item>
+      <image src="/images/iqiyi.png"></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 条件渲染(wx:if)和列表渲染(wx:for) 
+    wx:for-item="item" 可以省略，默认使用item可以获取每一项数据
+    wx:for-index="index" 可以省略，默认使用index可以获取下标
+  -->
+
+  <!-- view新闻列表 第一条数据-->
+  <block wx:for="{{post_key}}" wx:for-item="item" wx:for-index="index">
+    <!-- <text>{{index}}</text> -->
+    <view class="post-container">
+      <!-- 第一行，图片+文本 -->
+      <view class="post-author-date">
+        <image class="post-author" src="{{item.avatar}}"></image>
+        <text class="post-date">{{item.date}}</text>
+      </view>
+      <!-- 第二行 文字 -->
+      <!-- if("")==false if("11")==true -->
+      <text class="post-title">{{item.title}}</text>
+      <!-- 第三行 图片 -->
+      <image class="post-image" src="{{item.imgSrc}}"></image>
+      <!-- 第四行 文字-->
+      <text class="post-content">{{item.content}}</text>
+      <!-- 第五行 图片 文字 图片 文字 -->
+      <view class="post-like">
+        <image class="post-like-img" src="{{item.collection_img}}"></image>
+        <text class="post-like-font">{{item.collection}}</text>
+        <image class="post-like-img" src="{{item.reading_img}}"></image>
+        <text class="post-like-font">{{item.reading}}</text>
+      </view>
+    </view>
+  </block>
+</view>

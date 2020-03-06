@@ -1,0 +1,41 @@
+/* flex 弹性盒子模型 */
+.container {
+  /* 显示方式设置为弹性布局 */
+  display: flex;
+  /* 排布方向  垂直排列*/
+  flex-direction: column;
+  /* 属性定义flex子项在flex容器的当前行的水平（垂直）方向上的对齐方式 */
+  align-items: center;
+  /* background-color: #b3d4db; */
+}
+page {
+  background-color:  #b3d4db;
+}
+
+.user-avatar {
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 80px;
+}
+
+.user-name {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.moto {
+  font-size: 22rpx;
+  font-weight:bold;
+  line-height: 80rpx;
+  color: #405f80;
+}
+
+.moto-container {
+  margin-top: 200rpx;
+  border: 1px solid #405f80;
+  height: 80rpx;
+  width: 200rpx;
+  border-radius: 10rpx;
+  /* 文字水平居中 */
+  text-align: center;
+}
