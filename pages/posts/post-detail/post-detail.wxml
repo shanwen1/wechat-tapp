@@ -1,0 +1,31 @@
+<view class="container">
+  <!-- 音乐播放图 -->
+  <image catchtap="onMusicTap" class="audio" 
+  src="{{isPlayingMusic?'/images/music/music-stop.png':'/images/music/music-start.png'}}"></image>
+  <!-- 新闻图片 -->
+  <image class="head-image" src="{{isPlayingMusic?music.coverImg:headImgSrc}}"></image>
+  <!-- 作者信息 -->
+  <view class="author-data">
+    <image class="avatar" src="{{avatar}}"></image>
+    <text class="author">{{author}}</text>
+    <text class="const-text">发表于</text>
+    <text class="date">{{dateTime}}</text>
+  </view>
+  <!-- 标题 -->
+  <text class="title">{{title}}</text>
+  <!-- 收藏分享页面 -->
+  <view class="tool">
+    <!-- 两个图片 -->
+    <view class="circle-img">
+      <image wx:if="{{collected}}" catchtap="onCollectionTap" class="collection-img" src="/images/icon/collection.png"></image>
+      <image wx:else catchtap="onCollectionTap" class="collection-img" src="/images/icon/collection-anti.png"></image>
+      <image catchtap="onShareTap"  class="share-img" src="/images/icon/share.png"></image>
+    </view>
+    <!-- 一条横线 -->
+    <view class="horizon"></view>
+  </view>
+  <!-- 正文内容 -->
+  <text class="detail">
+    {{detail}}
+  </text>
+</view>

@@ -3,27 +3,30 @@ Page({
   /*点击按钮后该函数执行 */
 
   OnTap: function () {
-   //界面跳转，该页面不会被销毁
+   //界面跳转，该页面不会被销毁,不能跳转到tabBar页面
   //  wx.navigateTo({
   //    url: '../posts/posts',
   //  })
    
- //界面跳转，该页面会被销毁
-  wx.redirectTo({
-    url: '../posts/posts',
+ //界面跳转，该页面会被销毁，不能跳转到tabBar页面
+  // wx.redirectTo({
+  //   url: '../posts/posts',
   
-  })
-   
+  // })
+  // 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面
+    wx.switchTab({
+      url: '../posts/posts',
+    })
+
+
   },
   /*** 冒泡事件：当一个组件上的事件被触发后，该事件会向父节点传递。
        非冒泡事件：当一个组件上的事件被触发后，该事件不会向父节点传递。 */
 
   onContainerTap:function(){
-    console.log("onContainerTap");
   },
 
   onSubTap:function(){
-    console.log("onSubTap");
   },
 
   /**
@@ -37,31 +40,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      console.log("welcome page is onLoad");
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log("welcome page is onReady");
-
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-   
-    console.log("welcome page is onShow");
-
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    console.log("welcome page is onHide");
 
   },
 
@@ -69,7 +65,6 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    console.log("welcome page is onUnload");
 
   },
 

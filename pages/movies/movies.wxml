@@ -1,0 +1,31 @@
+<view>
+  <view class="movie-head">
+    <text class="slogan">正在热映</text>
+    <view class="more">
+      <text class="more-text">更多</text>
+      <image class="more-img" src="/images/icon/arrow-right.png"></image>
+    </view>
+  </view>
+  <view class="movie-list-container">
+      <view class="movies-container">
+        <block wx:for="{{movies}}">
+          <view class="movie-container"> 
+          <!-- data- 传递参数 -->
+            <image class="movie-img" binderror="imageLoadError" data-imgindex="{{index}}" src="{{item.movie_img}}"></image>
+            <text class="movie-title">{{item.name}}</text>
+            <view class="stars-container">
+              <view class="stars">
+                <image src="/images/icon/star.png"></image>
+                <image src="/images/icon/star.png"></image>
+                <image src="/images/icon/star.png"></image>
+                <image src="/images/icon/star.png"></image>
+                <image src="/images/icon/star.png"></image>
+              </view>
+              <text class="star-score">{{item.score}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+</view>

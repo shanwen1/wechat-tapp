@@ -3,9 +3,9 @@
 <view class="container">
 <!-- image默认值: width300px height225px rpx：自适应的 iphone6 width：200rpx(100px)-->
   <!--头像 -->
-  <image class="user-avatar" src="/images/avatar/2.png"></image>
+  <image class="user-avatar" src="/images/avatar/tx.jpg"></image>
   <!-- 昵称 -->
-  <text class="user-name">Hello,小奔</text>
+  <text class="user-name">hey，山文</text>
 <!-- 按钮  
   bindtap="OnTap" 给view绑定事件 点击view时 OnTap函数被调用
   catchtap：catch 来绑定事件。与 bind 不同， catch 会阻止事件向上冒泡

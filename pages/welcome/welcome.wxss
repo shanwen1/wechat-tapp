@@ -21,10 +21,11 @@ page {
 .user-name {
   font-size: 32rpx;
   font-weight: bold;
+  line-height: 60rpx;
 }
 
 .moto {
-  font-size: 22rpx;
+  font-size: 25rpx;
   font-weight:bold;
   line-height: 80rpx;
   color: #405f80;

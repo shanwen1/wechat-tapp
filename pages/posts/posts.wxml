@@ -1,17 +1,18 @@
+<import src="post-item/post-item-template.wxml" />
 <view>
   <!-- swiper 滑块视图容器，其中只可放置swiper-item组件，否则会导致未定义的行为。 -->
-  <swiper indicator-dots="true" autoplay="true" interval="2000">
+  <swiper catchtap="onSwiperTap" indicator-dots="true" autoplay="true" interval="2000">
     <!-- 仅可放置在swiper组件中，宽高自动设置为100%, -->
     <swiper-item>
-      <image src="/images/wx.png"></image>
+      <image data-postId="2" src="/images/1.jpg"></image>
     </swiper-item>
 
     <swiper-item>
-      <image src="/images/vr.png"></image>
+      <image data-postId="3" src="/images/2.jpg"></image>
     </swiper-item>
 
     <swiper-item>
-      <image src="/images/iqiyi.png"></image>
+      <image data-postId="4" src="/images/3.jpg"></image>
     </swiper-item>
   </swiper>
 
@@ -22,27 +23,12 @@
 
   <!-- view新闻列表 第一条数据-->
   <block wx:for="{{post_key}}" wx:for-item="item" wx:for-index="index">
-    <!-- <text>{{index}}</text> -->
-    <view class="post-container">
-      <!-- 第一行，图片+文本 -->
-      <view class="post-author-date">
-        <image class="post-author" src="{{item.avatar}}"></image>
-        <text class="post-date">{{item.date}}</text>
-      </view>
-      <!-- 第二行 文字 -->
-      <!-- if("")==false if("11")==true -->
-      <text class="post-title">{{item.title}}</text>
-      <!-- 第三行 图片 -->
-      <image class="post-image" src="{{item.imgSrc}}"></image>
-      <!-- 第四行 文字-->
-      <text class="post-content">{{item.content}}</text>
-      <!-- 第五行 图片 文字 图片 文字 -->
-      <view class="post-like">
-        <image class="post-like-img" src="{{item.collection_img}}"></image>
-        <text class="post-like-font">{{item.collection}}</text>
-        <image class="post-like-img" src="{{item.reading_img}}"></image>
-        <text class="post-like-font">{{item.reading}}</text>
-      </view>
+    <!-- template模板可以复用, 多个页面可以引用同一处代码
+      <!-- data-xxx 自定义数据 -->
+  <!-- id为 2 3 4 的不显示  -->
+    <view wx:if="{{item.postId!=2&&item.postId!=3&&item.postId!=4}}"
+     catchtap="onPostTap" data-postId="{{item.postId}}" data-User-Name="老王">
+      <template is="postItem" data="{{item}}"></template>
     </view>
   </block>
 </view>
